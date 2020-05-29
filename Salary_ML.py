@@ -35,7 +35,7 @@ def clean_data(df):
     for col in num_vars:
         df[col].fillna((df[col].mean()), inplace=True)
 
-    # Dummy the categorical variables
+    # Dummy the categorical variables for inclusion in the ML
     cat_vars = df.select_dtypes(include=['object']).copy().columns
     for var in  cat_vars:
         # for each cat add dummy var, drop original column
